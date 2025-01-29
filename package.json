@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"nodemon backend/index.js\" \"npm run dev --prefix frontend\"",
-    "pro": "NODE_ENV=production node backend/index.js",
+    "start": "NODE_ENV=production node backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
