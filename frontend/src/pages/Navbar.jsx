@@ -242,7 +242,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/DigitalCard" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/digital-business-cards" onClick={() => setIsMobileMenuOpen(false)}>
               Digital Business Card
             </Link>
           </li>

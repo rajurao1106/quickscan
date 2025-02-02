@@ -8,11 +8,11 @@ export default function CollectReviews() {
   return (
     <section className="w-full flex justify-center items-center">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold mb-5">
+        <h1 className="text-3xl font-bold mb-5 max-lg:text-center">
           THE EASIEST WAY TO COLLECT REVIEWS FASTER
         </h1>
-        <p className="text-md mb-10">THE EASIEST WAY TO COLLECT REVIEWS FASTER</p>
-        <div className="flex justify-between items-center w-full gap-10 mb-20">
+        <p className="text-md mb-10 max-lg:text-center">THE EASIEST WAY TO COLLECT REVIEWS FASTER</p>
+        <div className="flex justify-between items-center w-full gap-10 mb-20 max-lg:flex-col">
         <div className="flex flex-col justify-center items-center text-center">
             <img src={collect_review_img1} alt="" className="w-[20rem]"/>
             <h1 className="text-xl font-semibold">Tap for the Reviews</h1>
@@ -39,7 +39,7 @@ export default function CollectReviews() {
           </div>
           
         </div>
-        <h1 className="text-3xl mb-10">Explore Our Smart Google Review Card</h1>
+        <h1 className="text-3xl mb-10 max-md:text-center">Explore Our Smart Google Review Card</h1>
         <img src={card_review} alt="" />
       </div>
     </section>

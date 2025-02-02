@@ -73,9 +73,9 @@ export default function DigitalCards() {
   ];
 
   return (
-    <section className="w-full flex flex-col justify-center items-center">
+    <section className="w-full flex flex-col justify-center items-center max-lg:text-center">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center pt-[5rem]">
-        <div className="flex w-full justify-center items-center px-14">
+        <div className="flex w-full justify-center items-center px-14 max-lg:flex-col">
           <div className="">
             <h1 className="text-4xl font-bold mb-5">Digital Business Card</h1>
             <p className="text-xl mb-5">
@@ -101,13 +101,13 @@ export default function DigitalCards() {
             Design digital business card is a professional & modern way to
             connect
           </p>
-          <div className="flex gap-10">
+          <div className="flex max-lg:flex-col">
             {Benefits.map((benefit, index) => (
-              <div className="flex flex-col justify-center items-center gap-2 text-white">
+              <div className="flex flex-col justify-center items-center gap-5 text-white max-lg:p-10">
                 <img
                   src={benefit.image}
                   alt=""
-                  className="rounded-xl bg-white"
+                  className="rounded-xl bg-white "
                 />
                 <p className="text-xl">{benefit.benefit}</p>
               </div>
@@ -124,7 +124,7 @@ export default function DigitalCards() {
             Here’s how you can make a digital card with help of this free-to-use
             DIT tool.
           </p>
-          <div className="flex gap-10">
+          <div className="flex gap-10 max-lg:flex-col ">
             {Proccess.map((proccess, index) => (
               <div className="flex flex-col justify-center items-center gap-2">
                 <img
@@ -142,7 +142,7 @@ export default function DigitalCards() {
         </button>
       </div>
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="max-w-[1200px] pt-[2rem] flex justify-center items-center mb-10 px-14">
+        <div className="max-w-[1200px] pt-[2rem] flex justify-center items-center mb-10 px-14 max-lg:flex-col">
           <div className="px-14">
             <h1 className="text-5xl font-bold mb-5">
               What is a digital business card ?
@@ -191,7 +191,7 @@ export default function DigitalCards() {
             <FaStarHalfAlt />
           </div>
         </div>
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-5 ">
           <div className="border p-8 text-center text-white rounded-xl">
             <p className="text-5xl">20K+</p>
             <p className="text-xl">Successful Users</p>
@@ -221,7 +221,7 @@ export default function DigitalCards() {
             vkardz.com, the best digital business card.
           </p>
         </div>
-        <div className="bg-blue-950 flex overflow-x-scroll space-x-4 p-4">
+        <div className="bg-blue-950 mb-10 rounded-xl flex w-[90%] overflow-x-scroll max-lg:overflow-hidden space-x-4 p-4 max-lg:flex-col max-lg:gap-10">
           {Features.map((feature, index) => (
             <div
               key={index}

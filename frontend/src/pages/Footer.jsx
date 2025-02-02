@@ -4,9 +4,9 @@ import logo from "../assets/Navbar/logo.webp";
 export default function Footer() {
   return (
     <section className="w-full flex flex-col justify-center items-center bg-blue-950 text-white">
-      <div className="w-full max-w-[1200px]">
-        <div className=" py-10 grid-cols-4 grid gap-5">
-          <div className="">
+      <div className="w-full max-w-[1200px] flex flex-col justify-center items-center">
+        <div className=" py-10 grid-cols-4 grid gap-5 max-lg:grid-cols-1 max-md:text-center ">
+          <div className=" max-lg:items-center max-md:flex max-lg:flex-col">
             <img src={logo} alt="" className="w-28" />
             <p>
               We at Tapify, redefining connections with NFC review & digital
@@ -48,8 +48,8 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="w-full h-[1px] bg-white"></div>
-        <div className="flex justify-between py-3">
+        <div className="w-[90%] h-[1px] bg-white"></div>
+        <div className="flex justify-between py-3 items-center text-center text-[14px] flex-col">
           <p>© 2024 Tapify. All rights reserved</p>
           <p>
             Privacy Policy | Refund Policy | Terms & Conditions | Shipping &

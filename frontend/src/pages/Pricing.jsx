@@ -35,9 +35,9 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="w-full flex flex-col justify-center items-center">
+    <section className="w-full flex flex-col justify-center items-center max-lg:text-center">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center pt-[5rem]">
-        <div className="flex justify-center items-center px-10">
+        <div className="flex justify-center items-center px-10 max-lg:flex-col max-lg:text-center">
           <div className="flex flex-col gap-5">
             <h1 className="text-5xl font-semibold">
               Get Started with a Pro Package
@@ -48,7 +48,7 @@ export default function Pricing() {
               EVERYTHING you need to thrive, all in one package. Your journey to
               the top starts here!
             </p>
-            <button className="bg-blue-950 text-white p-3 rounded-full text-xl w-[12rem]">
+            <button className="bg-blue-950 text-white max-lg:w-full p-3 rounded-full text-xl w-[12rem]">
               Try Pro Package
             </button>
           </div>
@@ -106,7 +106,7 @@ export default function Pricing() {
             ))}
           </div>
         )}
-        <div className="flex justify-center items-center px-14">
+        <div className="flex justify-center items-center px-14 max-lg:flex-col">
           <div className="">
             <h1 className="text-6xl font-bold mb-3">Enterprise Plan for Your Team</h1>
             <p className="text-xl mb-3">
