@@ -28,7 +28,7 @@ export default function Cart() {
 
   const [inputValue, setInputValue] = useState(() => {
     const storedInputValue = localStorage.getItem('inputValue');
-    return storedInputValue ? JSON.parse(storedInputValue) : ""; // Use `Number()` for conversion
+    return storedInputValue ? JSON.parse(storedInputValue) : "1"; // Use `Number()` for conversion
   });
   
   // Initial value set to 1

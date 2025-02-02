@@ -8,6 +8,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { StoreContext } from "./context/StoreProvider";
 import SignInModal from "./SignInModal";
 import { useAuthStore } from "../store/authStore";
+import AddCart from "./AddCart";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,6 +23,11 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
+  };
+
+  const [addCart, setAddCart] = useState(false);
+  const addCartHandle = () => {
+    setAddCart(!addCart);
   };
 
   return (
@@ -164,8 +172,19 @@ export default function Navbar() {
             <p className="text-sm absolute -right-1 top-0 text-black bg-white rounded-full px-1">
               {count}
             </p>{" "}
-            <MdOutlineShoppingCart />
+            <MdOutlineShoppingCart onClick={addCartHandle} />
           </p>
+          <div
+            className={`${
+              addCart
+                ? "absolute w-[30%] h-screen bg-blue-950 top-0 right-0 text-white"
+                : "absolute w-[0%] h-screen bg-white top-0 right-0 text-white hidden"
+            }`}
+          >
+            <button onClick={addCartHandle} className="text-4xl relative left-[55vh] p-5"><IoIosCloseCircleOutline/></button>
+            <AddCart />
+            
+          </div>
           <p
             className=" cursor-pointer text-5xl group "
             // Open Sign-In Modal

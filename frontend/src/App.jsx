@@ -30,6 +30,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import FloatingShape from "./components/FloatingShape";
 
 import { useAuthStore } from "./store/authStore";
+import PageNotFound from "./pages/PageNotFound";
 
 // ProtectedRoute Component
 const ProtectedRoute = ({ children }) => {
@@ -143,7 +144,7 @@ export default function App() {
             }
           />
 
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<PageNotFound/>} />
         </Routes>
 
         {/* Footer */}

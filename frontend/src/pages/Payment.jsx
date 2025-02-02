@@ -19,7 +19,7 @@ export default function Payment() {
     const keyId = "rzp_test_rnzCxSf5oYy7vE"; // Your Razorpay Key ID
 
     // Step 1: Fetch Order ID from Backend
-    const response = await fetch("http://localhost:3000/create-order", {
+    const response = await fetch("http://localhost:5000/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: calculate?.totalCost || 1 }) // Amount in rupees
@@ -96,7 +96,7 @@ export default function Payment() {
             </div>
             <div className="flex flex-col items-center justify-center gap-8">
               <p className="text-lg font-semibold">Price</p>
-              <p className="text-lg flex font-semibold">{`₹${selectedData?.pricing?.currentPrice || 0}`}</p>
+              <p className="text-lg flex font-semibold">{`${selectedData?.pricing?.currentPrice || 0}`}</p>
             </div>
           </div>
 

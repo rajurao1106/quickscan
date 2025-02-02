@@ -197,3 +197,35 @@ export const checkAuth = async (req, res) => {
 		res.status(400).json({ success: false, message: error.message });
 	}
 };
+
+
+export const addData = async (req, res) => {
+	try {
+		const { total } = req.body;
+
+		// Ensure total is provided
+		if (total === undefined) {
+			return res.status(400).json({ success: false, message: "Total is required" });
+		}
+
+		const sendData = new User({ total });
+		await sendData.save();
+
+		res.status(201).json({ success: true, data: sendData });
+	} catch (error) {
+		console.error("Error in addData:", error);
+		res.status(500).json({ success: false, message: error.message });
+	}
+};
+
+export const takeData = async (req, res) => {
+	try {
+		const getData = await User.find();
+
+		res.status(200).json({ success: true, data: getData });
+	} catch (error) {
+		console.error("Error in takeData:", error);
+		res.status(500).json({ success: false, message: error.message });
+	}
+};
+
