@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
     <section className="w-full flex flex-col justify-center items-center py-10">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center text-center">
         <h1 className="text-3xl font-bold mb-5">Why Choose Us</h1>
-        <p className="text-lg w-[600px] mb-8">
+        <p className="text-lg w-[600px] max-lg:w-full mb-8">
           Tapify offers unparalleled NFC solutions, ensuring seamless
           integration, convenience, and unmatched reliability for your business.
         </p>

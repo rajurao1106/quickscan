@@ -11,7 +11,7 @@ export default function Clients() {
     <section className="w-full flex flex-col justify-center items-center mb-10 py-20">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center">
         <h1 className='text-3xl font-bold mb-5'>OUR VALUED CUSTOMERS</h1>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-center w-[90%] flex-wrap items-center">
         <img src={client_img1} alt="" />
         <img src={client_img2} alt="" />
         <img src={client_img3} alt="" />

@@ -3,9 +3,9 @@ import about_img1 from "../assets/Digital Cards/digital-card-img8.png";
 
 export default function AboutUs() {
   return (
-    <section className="w-full flex justify-center items-center">
+    <section className="w-full flex justify-center items-center max-lg:text-center ">
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center pt-[5rem]">
-        <div className="flex justify-center items-center gap-10 px-10">
+        <div className="flex justify-center items-center gap-10 px-10 max-lg:flex-col-reverse">
           <div className="py-10">
             <h1 className="text-4xl font-bold mb-10">
               Introducing Tapify – Your Gateway to Enhanced Networking and

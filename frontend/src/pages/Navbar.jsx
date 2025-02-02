@@ -227,6 +227,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
+            <Link to="/About-Us" onClick={() => setIsMobileMenuOpen(false)}>
+              About Us
+            </Link>
+          </li>
+          <li>
             <Link to="/Deals" onClick={() => setIsMobileMenuOpen(false)}>
               Deals
             </Link>
