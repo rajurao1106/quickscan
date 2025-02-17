@@ -9,6 +9,7 @@ import {
 	checkAuth,
 	addData,
 	takeData,
+	deleteProduct,
 } from "../controllers/auth.controller.js";
 import { verifyToken } from "../middleware/verifyToken.js";
 
@@ -25,7 +26,8 @@ router.post("/forgot-password", forgotPassword);
 
 router.post("/reset-password/:token", resetPassword);
 
-router.post("/total-price", addData);
-router.get("/take-price", takeData);
+router.post("/add-data", addData);
+router.get("/take-data", takeData);
+router.delete("/delete-product/:id", deleteProduct);
 
 export default router;
