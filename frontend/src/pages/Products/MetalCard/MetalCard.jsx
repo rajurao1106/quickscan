@@ -10,23 +10,22 @@ export default function GoldenMetalCard() {
       description:
         "Fully Customizable NFC Business Card || Smart NFC Smart Business Card || NFC Card",
       price: "$2999",
-      link: "/products/metal-smart-business-card/premium-gold-card"
+      link: "/products/metal-smart-business-card/premium-gold-card",
     },
     {
       image: metal_card2,
       description:
         "Premium Silver NFC Business Card - Premium Quality Metal Card | QR Support & NFC Features",
       price: "$2999",
-      link: "/products/metal-smart-business-card/premium-silver-card"
+      link: "/products/metal-smart-business-card/premium-silver-card",
     },
     {
       image: metal_card1,
       description:
         "Fully Customizable NFC Business Card || Smart NFC Smart Business Card || NFC Card",
       price: "$2999",
-      link: ""
+      link: "",
     },
-    
   ];
 
   return (
@@ -37,7 +36,7 @@ export default function GoldenMetalCard() {
           {Cards.map((card, index) => (
             <div className="border-gray-300 border-[1px] shadow-md w-[20rem] overflow-hidden rounded-md">
               <Link to={`${card.link}`} className="relative group">
-                <img className="" src={`${card.image}`} alt="" />
+                <img loading="lazy" className="" src={`${card.image}`} alt="" />
                 <p className="absolute top-[50%] left-[35%] group-hover:block hidden transition-all text-white font-semibold border rounded-full px-4 p-2">
                   See more
                 </p>

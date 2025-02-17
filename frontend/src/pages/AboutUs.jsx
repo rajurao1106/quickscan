@@ -26,7 +26,7 @@ export default function AboutUs() {
               connected futures.
             </p>
           </div>
-          <img src={about_img1} alt="" />
+          <img loading="lazy" src={about_img1} alt="" />
         </div>
       </div>
     </section>

@@ -25,13 +25,16 @@ const actions = [
 export default function PremiumSilverCard() {
   const { updateData } = useContext(StoreContext);
 
- 
   return (
     <section className="w-full flex justify-center items-center flex-col bg-blue-950">
       <div className="w-full flex justify-center items-center flex-col max-w-[1200px] pt-[5rem]">
         <div className="flex justify-center items-center gap-10 px-10">
           {/* Product Image */}
-          <img src={productDetails.image} alt="Premium Metal Card" />
+          <img
+            loading="lazy"
+            src={productDetails.image}
+            alt="Premium Metal Card"
+          />
 
           {/* Product Details */}
           <div>
@@ -59,7 +62,6 @@ export default function PremiumSilverCard() {
             </div>
 
             {/* Click Counter */}
-            
 
             {/* Action Buttons */}
             <div className="flex gap-5 mb-5">
@@ -68,7 +70,10 @@ export default function PremiumSilverCard() {
                   key={index}
                   className={`border-[2px] text-xl p-2 px-14 rounded-full ${action.style}`}
                 >
-                  <Link onClick={() => updateData(productDetails)} to={action.link}>
+                  <Link
+                    onClick={() => updateData(productDetails)}
+                    to={action.link}
+                  >
                     {action.text}
                   </Link>
                 </button>

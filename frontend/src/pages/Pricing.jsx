@@ -52,7 +52,7 @@ export default function Pricing() {
               Try Pro Package
             </button>
           </div>
-          <img src={pricing_img1} alt="" className="w-[30rem]" />
+          <img loading="lazy" src={pricing_img1} alt="" className="w-[30rem]" />
         </div>
         <h1 className="text-3xl font-semibold mb-3">
           Choose the best plan for you or your business.
@@ -108,15 +108,19 @@ export default function Pricing() {
         )}
         <div className="flex justify-center items-center px-14 max-lg:flex-col">
           <div className="">
-            <h1 className="text-6xl font-bold mb-3">Enterprise Plan for Your Team</h1>
+            <h1 className="text-6xl font-bold mb-3">
+              Enterprise Plan for Your Team
+            </h1>
             <p className="text-xl mb-3">
               Vkardz offers team management with this plan. Manage employee card
               access, activities, and details. Add or remove members anytime,
               anywhere.
             </p>
-            <button className="bg-blue-950 text-white p-3 rounded-full text-xl w-[12rem]">Learn More</button>
+            <button className="bg-blue-950 text-white p-3 rounded-full text-xl w-[12rem]">
+              Learn More
+            </button>
           </div>
-          <img src={pricing_img1} alt="" className="w-[30rem]"/>
+          <img loading="lazy" src={pricing_img1} alt="" className="w-[30rem]" />
         </div>
       </div>
     </section>

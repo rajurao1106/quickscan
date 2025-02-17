@@ -50,6 +50,7 @@ const AddCart = () => {
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="w-[100px] flex-shrink-0">
                         <img
+                          loading="lazy"
                           src={selectedData?.image}
                           alt={selectedData?.title}
                           className="w-full h-full object-cover rounded-lg"
@@ -62,7 +63,10 @@ const AddCart = () => {
                             <p className="flex items-center justify-between">
                               <span>Price:</span>
                               <span className="font-medium flex gap-1">
-                              {product.quantity} X  <p className="text-orange-500">{product.price}</p>
+                                {product.quantity} X{" "}
+                                <p className="text-orange-500">
+                                  {product.price}
+                                </p>
                               </span>
                             </p>
                             {/* <p className="flex items-center justify-between">
@@ -100,7 +104,7 @@ const AddCart = () => {
                 <span>${calculateTotal().toFixed(2)}</span>
               </div>
               <button className="w-full mt-4 mb-14 bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
-              <Link to={"/payment"}>Proceed to Checkout</Link> 
+                <Link to={"/payment"}>Proceed to Checkout</Link>
               </button>
             </div>
           </div>

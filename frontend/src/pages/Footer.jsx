@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="w-full max-w-[1200px] flex flex-col justify-center items-center">
         <div className=" py-10 grid-cols-4 grid gap-5 max-lg:grid-cols-1 max-md:text-center ">
           <div className=" max-lg:items-center max-md:flex max-lg:flex-col">
-            <img src={logo} alt="" className="w-28" />
+            <img loading="lazy" src={logo} alt="" className="w-28" />
             <p>
               We at Tapify, redefining connections with NFC review & digital
               visiting cards. Elevate networking effortlessly. 🌟{" "}

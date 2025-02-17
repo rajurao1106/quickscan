@@ -11,12 +11,11 @@ import useCartStore, { useAuthStore } from "../store/authStore";
 import AddCart from "./AddCart";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false); // Toggle for SignIn Modal
-    const { cart, fetchProducts, deleteProduct } = useCartStore();
+  const { cart, fetchProducts, deleteProduct } = useCartStore();
 
   const { count, updatCart } = useContext(StoreContext);
 
@@ -36,7 +35,7 @@ export default function Navbar() {
       <div className="max-w-[1200px] w-full h-[70px] justify-between items-center flex px-4 text-base">
         {/* Logo */}
         <Link to={"/"}>
-          <img src={logo} alt="Logo" className="w-28" />
+          <img loading="lazy" src={logo} alt="Logo" className="w-28" />
         </Link>
 
         {/* Desktop Menu */}
@@ -168,7 +167,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-5 justify-center items-center">
           <p
             className="hover:text-gray-300 cursor-pointer text-3xl bg-yellow-400 rounded-full p-2 relative"
-            onClick={updatCart} 
+            onClick={updatCart}
           >
             <p className="text-sm absolute -right-1 top-0 text-black bg-white rounded-full px-1">
               {cart.length}
@@ -182,9 +181,13 @@ export default function Navbar() {
                 : "absolute w-[0%] h-screen bg-white top-0 right-0 text-white hidden"
             }`}
           >
-            <button onClick={addCartHandle} className="text-4xl relative left-[55vh] p-5"><IoIosCloseCircleOutline/></button>
+            <button
+              onClick={addCartHandle}
+              className="text-4xl relative left-[55vh] p-5"
+            >
+              <IoIosCloseCircleOutline />
+            </button>
             <AddCart />
-            
           </div>
           <p
             className=" cursor-pointer text-5xl group "
@@ -248,7 +251,10 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/digital-business-cards" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link
+              to="/digital-business-cards"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Digital Business Card
             </Link>
           </li>

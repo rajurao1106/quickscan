@@ -89,7 +89,7 @@ export default function DigitalCards() {
               Create A Digital Business Card
             </button>
           </div>
-          <img src={digital_card_img1} alt="" />
+          <img loading="lazy" src={digital_card_img1} alt="" />
         </div>
       </div>
       <div className="w-full bg-blue-950 flex flex-col justify-center items-center">
@@ -105,6 +105,7 @@ export default function DigitalCards() {
             {Benefits.map((benefit, index) => (
               <div className="flex flex-col justify-center items-center gap-5 text-white max-lg:p-10">
                 <img
+                  loading="lazy"
                   src={benefit.image}
                   alt=""
                   className="rounded-xl bg-white "
@@ -128,6 +129,7 @@ export default function DigitalCards() {
             {Proccess.map((proccess, index) => (
               <div className="flex flex-col justify-center items-center gap-2">
                 <img
+                  loading="lazy"
                   src={proccess.image}
                   alt=""
                   className="rounded-xl bg-white"
@@ -175,7 +177,7 @@ export default function DigitalCards() {
               </div>
             </div>
           </div>
-          <img src={digital_card_img8} alt="" />
+          <img loading="lazy" src={digital_card_img8} alt="" />
         </div>
       </div>
       <div className="max-w-[1200px] bg-blue-950 w-full flex justify-center items-center mb-10 px-14 text-white rounded-3xl p-10">

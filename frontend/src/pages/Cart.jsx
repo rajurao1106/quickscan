@@ -81,6 +81,7 @@ export default function Cart() {
           <div className="flex flex-col items-center justify-center gap-2">
             <p className="text-lg font-semibold">Image</p>
             <img
+              loading="lazy"
               src={selectedData?.image}
               alt={selectedData?.title}
               className="w-[8rem] rounded-lg"

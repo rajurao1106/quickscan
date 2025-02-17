@@ -8,7 +8,7 @@ import useCartStore, { useAuthStore } from "../store/authStore";
 
 export default function Payment() {
   const { addresses, selectedData } = useContext(StoreContext);
-  const { cart, fetchProducts, deleteProduct } = useCartStore(); 
+  const { cart, fetchProducts, deleteProduct } = useCartStore();
   const { user } = useAuthStore();
 
   useEffect(() => {
@@ -53,13 +53,31 @@ export default function Payment() {
 
   // Steps for cart process
   const CartSteps = [
-    { number: "01", heading: "Shopping Cart", para: "Manage Your item list", color: "text-gray-400" },
-    { number: "02", heading: "Delivery Address", para: "Add Your Address", color: "text-gray-400" },
-    { number: "03", heading: "Checkout Detail", para: "Checkout Your item list", color: "text-white" },
+    {
+      number: "01",
+      heading: "Shopping Cart",
+      para: "Manage Your item list",
+      color: "text-gray-400",
+    },
+    {
+      number: "02",
+      heading: "Delivery Address",
+      para: "Add Your Address",
+      color: "text-gray-400",
+    },
+    {
+      number: "03",
+      heading: "Checkout Detail",
+      para: "Checkout Your item list",
+      color: "text-white",
+    },
   ];
 
   // Calculate the total of all product subtotals
-  const totalSubtotal = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+  const totalSubtotal = cart.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
   const gstAmount = totalSubtotal * 0.18; // 18% GST
   const totalCost = totalSubtotal + gstAmount; // Final total
 
@@ -85,27 +103,43 @@ export default function Payment() {
         {/* Cart Items List */}
         <ul className="flex flex-col gap-10 w-[60%] max-lg:w-[90%]  ">
           {cart.map((product) => (
-            <li key={product._id} className="rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow bg-blue-900 p-3">
+            <li
+              key={product._id}
+              className="rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow bg-blue-900 p-3"
+            >
               <div>
-                
                 <div className="flex flex-col md:flex-row gap-6 ">
                   <div className="w-[200px] flex-shrink-0">
-                    <img src={selectedData.image} alt={product.title} className="w-full h-full object-cover rounded-lg" />
+                    <img
+                      loading="lazy"
+                      src={selectedData.image}
+                      alt={product.title}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <div className="flex-1 flex flex-col justify-between">
                     <div className="space-y-2">
-                    <h3 className="text-lg font-semibold mb-2">{product.product}</h3>
+                      <h3 className="text-lg font-semibold mb-2">
+                        {product.product}
+                      </h3>
                       <p className="flex items-center justify-between">
                         <span>Price:</span>
-                        <span className="font-medium flex gap-1">{product.quantity} X <span className="text-orange-500">{product.price}</span></span>
+                        <span className="font-medium flex gap-1">
+                          {product.quantity} X{" "}
+                          <span className="text-orange-500">
+                            {product.price}
+                          </span>
+                        </span>
                       </p>
                       <p className="flex items-center justify-between">
                         <span>Subtotal:</span>
-                        <span className="font-medium">₹{(product.price * product.quantity).toFixed(2)}</span>
+                        <span className="font-medium">
+                          ₹{(product.price * product.quantity).toFixed(2)}
+                        </span>
                       </p>
                     </div>
-                    <button 
-                      onClick={() => deleteProduct(product._id)} 
+                    <button
+                      onClick={() => deleteProduct(product._id)}
                       className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -150,12 +184,21 @@ export default function Payment() {
           <div className="p-3 rounded-xl border">
             <p>Credit Card/Debit Card/Banking/UPI</p>
             <h1 className="text-xl font-bold flex items-center mb-5">
-              <img src={razorpay} alt="Razorpay" className="w-10" /> Pay by Razorpay
+              <img
+                loading="lazy"
+                src={razorpay}
+                alt="Razorpay"
+                className="w-10"
+              />{" "}
+              Pay by Razorpay
             </h1>
-            <p>Pay securely by Debit or Credit Card or Internet Banking through Razorpay</p>
+            <p>
+              Pay securely by Debit or Credit Card or Internet Banking through
+              Razorpay
+            </p>
           </div>
 
-          <button 
+          <button
             onClick={handlePayment}
             className="w-full text-black bg-white p-3 rounded-full font-semibold text-lg"
           >

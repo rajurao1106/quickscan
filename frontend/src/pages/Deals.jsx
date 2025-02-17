@@ -164,9 +164,7 @@ export default function Deals() {
 
   return (
     <section className="w-full flex flex-col justify-center items-center bg-blue-950">
-     
       <div className="w-full max-w-[1200px] pt-[8rem] flex flex-col justify-center items-center">
-      
         <div className="flex flex-col justify-center items-center gap-10 w-full">
           <div className="flex gap-5 max-md:flex-col ">
             {Ordering.map((order, index) => (
@@ -194,7 +192,7 @@ export default function Deals() {
           <div className=" w-full flex flex-wrap p-10 gap-5 justify-center items-center">
             {Deals.map((deal, index) => (
               <div className="bg-white rounded-xl overflow-hidden flex flex-col gap-2">
-                <img src={deal.image} alt="" className="w-64"/>
+                <img loading="lazy" src={deal.image} alt="" className="w-64" />
                 <div className="w-64 p-3 ">{deal.description}</div>
                 <div className="p-3">{deal.price}</div>
               </div>
