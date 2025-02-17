@@ -82,12 +82,12 @@ export default function DeliveryDetails() {
   ];
 
   return (
-    <section className="w-full flex flex-col justify-center items-center bg-blue-950">
+    <section className="w-full flex flex-col justify-center items-center bg-blue-950 px-4 sm:px-8 md:px-16">
       {/* Cart Steps */}
       <div className="bg-[#ffffff2c] w-full flex flex-col justify-center items-center mb-5">
-        <div className="w-full max-w-[900px] flex justify-between py-3 pt-[5rem]">
+        <div className="w-full max-w-[900px] flex flex-wrap justify-between py-3 pt-[5rem]">
           {cartSteps.map((step) => (
-            <div key={step.number} className={`flex ${step.color} gap-1 py-3`}>
+            <div key={step.number} className={`flex ${step.color} gap-1 py-3 w-full sm:w-auto`}>
               <p className="text-5xl font-bold">{step.number}</p>
               <div className="text-lg">
                 <h1>{step.heading}</h1>
@@ -99,8 +99,8 @@ export default function DeliveryDetails() {
       </div>
 
       {/* Delivery Details and Summary */}
-      <div className="w-full max-w-[1200px] flex items-start gap-5 justify-center">
-        <div className="w-full rounded-lg p-2 flex flex-col gap-5">
+      <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-start gap-5 justify-center">
+        <div className="w-full md:w-[55%] rounded-lg p-2 flex flex-col gap-5">
           <h1 className="text-white text-3xl font-semibold">Delivery Details</h1>
           <div
             className="flex flex-col bg-[#ffffff2c] border items-center justify-center cursor-pointer gap-2 rounded-xl h-28"
@@ -132,7 +132,7 @@ export default function DeliveryDetails() {
         </div>
 
         {/* Summary */}
-        <div className="w-[40%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl">
+        <div className="w-full md:w-[40%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl mt-5 md:mt-0">
           <h1 className="text-2xl font-semibold">Summary</h1>
           <div className="flex justify-between text-xl w-full border-b pb-5">
             <p>Sub-Total</p>

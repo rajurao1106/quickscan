@@ -81,19 +81,20 @@ export default function Payment() {
       </div>
 
       {/* Main Content */}
-      <div className="flex w-full max-w-[1200px] gap-10 text-white">
+      <div className="flex w-full max-w-[1200px] gap-10 text-white max-lg:flex-col justify-center items-start max-lg:justify-center max-lg:items-center">
         {/* Cart Items List */}
-        <ul className="flex flex-col gap-10 w-[60%]">
+        <ul className="flex flex-col gap-10 w-[60%] max-lg:w-[90%]  ">
           {cart.map((product) => (
-            <li key={product._id} className="rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <li key={product._id} className="rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow bg-blue-900 p-3">
               <div>
-                <h3 className="text-lg font-semibold mb-2">{product.product}</h3>
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="w-[100px] flex-shrink-0">
+                
+                <div className="flex flex-col md:flex-row gap-6 ">
+                  <div className="w-[200px] flex-shrink-0">
                     <img src={selectedData.image} alt={product.title} className="w-full h-full object-cover rounded-lg" />
                   </div>
                   <div className="flex-1 flex flex-col justify-between">
                     <div className="space-y-2">
+                    <h3 className="text-lg font-semibold mb-2">{product.product}</h3>
                       <p className="flex items-center justify-between">
                         <span>Price:</span>
                         <span className="font-medium flex gap-1">{product.quantity} X <span className="text-orange-500">{product.price}</span></span>
@@ -118,7 +119,7 @@ export default function Payment() {
         </ul>
 
         {/* Right Section: Summary */}
-        <div className="w-[40%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl">
+        <div className="w-[40%] max-lg:w-[90%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl">
           <h1 className="text-2xl font-semibold">Summary</h1>
 
           <div className="flex justify-between text-xl w-full border-b pb-5">

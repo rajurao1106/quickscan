@@ -76,7 +76,7 @@ export default function Cart() {
         </div>
       </div>
 
-      <div className="w-full max-w-[1200px] flex items-start justify-center gap-5">
+      <div className="w-full max-w-[1200px] flex max-lg:flex-col items-start justify-center max-lg:items-center gap-5">
         <div className="w-full bg-white rounded-lg p-2 flex justify-center items-start gap-5">
           <div className="flex flex-col items-center justify-center gap-2">
             <p className="text-lg font-semibold">Image</p>
@@ -106,7 +106,7 @@ export default function Cart() {
           </div>
         </div>
 
-        <div className="w-[40%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl">
+        <div className="w-[40%] max-lg:w-[90%] bg-[#ffffff48] text-white border p-5 flex flex-col justify-center items-center gap-5 rounded-xl">
           <h1 className="text-2xl font-semibold">Summary</h1>
           <div className="flex justify-between text-xl w-full border-b pb-5">
             <p>Sub-Total</p>
