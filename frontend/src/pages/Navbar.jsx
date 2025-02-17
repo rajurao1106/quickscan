@@ -7,7 +7,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { StoreContext } from "./context/StoreProvider";
 import SignInModal from "./SignInModal";
-import { useAuthStore } from "../store/authStore";
+import useCartStore, { useAuthStore } from "../store/authStore";
 import AddCart from "./AddCart";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false); // Toggle for SignIn Modal
+    const { cart, fetchProducts, deleteProduct } = useCartStore();
 
   const { count, updatCart } = useContext(StoreContext);
 
@@ -167,10 +168,10 @@ export default function Navbar() {
         <div className="hidden md:flex gap-5 justify-center items-center">
           <p
             className="hover:text-gray-300 cursor-pointer text-3xl bg-yellow-400 rounded-full p-2 relative"
-            onClick={updatCart} // Call updatCart on click
+            onClick={updatCart} 
           >
             <p className="text-sm absolute -right-1 top-0 text-black bg-white rounded-full px-1">
-              {count}
+              {cart.length}
             </p>{" "}
             <MdOutlineShoppingCart onClick={addCartHandle} />
           </p>

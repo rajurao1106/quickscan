@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import useCartStore from "../store/authStore";
 import { StoreContext } from "./context/StoreProvider";
 import { Trash2, ShoppingCart, Package } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AddCart = () => {
   const { cart, fetchProducts, deleteProduct } = useCartStore();
@@ -19,8 +20,8 @@ const AddCart = () => {
   };
 
   return (
-    <div className="min-h-screen text-white p-6 md:p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen text-white p-6 md:p-8 overflow-y-scroll overflow-scroll h-[100%]">
+      <div className="max-w-4xl mx-auto  ">
         <div className="flex items-center gap-3 mb-6">
           <ShoppingCart className="w-6 h-6 text-indigo-600" />
           <h2 className="text-2xl font-bold ">Your Shopping Cart</h2>
@@ -35,8 +36,8 @@ const AddCart = () => {
             </button>
           </div>
         ) : (
-          <div className="space-y-6">
-            <ul className="space-y-4">
+          <div className="space-y-6 ">
+            <ul className="space-y-4   ">
               {cart.map((product) => (
                 <li
                   key={product._id}
@@ -60,16 +61,16 @@ const AddCart = () => {
                           <div className="space-y-2 ">
                             <p className="flex items-center justify-between">
                               <span>Price:</span>
-                              <span className="font-medium ">
-                                ${product.price.toFixed(2)}
+                              <span className="font-medium flex gap-1">
+                              {product.quantity} X  <p className="text-orange-500">{product.price}</p>
                               </span>
                             </p>
-                            <p className="flex items-center justify-between">
+                            {/* <p className="flex items-center justify-between">
                               <span>Quantity:</span>
                               <span className="font-medium ">
-                                {product.quantity}
+                               
                               </span>
-                            </p>
+                            </p> */}
                             <p className="flex items-center justify-between">
                               <span>Subtotal:</span>
                               <span className="font-medium ">
@@ -98,8 +99,8 @@ const AddCart = () => {
                 <span>Total</span>
                 <span>${calculateTotal().toFixed(2)}</span>
               </div>
-              <button className="w-full mt-4 bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
-                Proceed to Checkout
+              <button className="w-full mt-4 mb-14 bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+              <Link to={"/payment"}>Proceed to Checkout</Link> 
               </button>
             </div>
           </div>

@@ -1,20 +1,34 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { StoreContext } from "./context/StoreProvider";
 import useCartStore from "../store/authStore";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const { selectedData = {}, updateCalculate } = useContext(StoreContext);
   const { cart, fetchProducts, addProduct, deleteProduct } = useCartStore();
- 
+  const navigate = useNavigate();
 
   const CartSteps = [
-    { number: "01", heading: "Shopping Cart", para: "Manage Your item list", color: "text-white" },
-    { number: "02", heading: "Delivery Address", para: "Add Your Address", color: "text-gray-400" },
-    { number: "03", heading: "Checkout Detail", para: "Checkout Your item list", color: "text-gray-400" },
+    {
+      number: "01",
+      heading: "Shopping Cart",
+      para: "Manage Your item list",
+      color: "text-white",
+    },
+    {
+      number: "02",
+      heading: "Delivery Address",
+      para: "Add Your Address",
+      color: "text-gray-400",
+    },
+    {
+      number: "03",
+      heading: "Checkout Detail",
+      para: "Checkout Your item list",
+      color: "text-gray-400",
+    },
   ];
-
- 
 
   const [inputValue, setInputValue] = useState(() => {
     const storedInputValue = localStorage.getItem("inputValue");
@@ -28,7 +42,9 @@ export default function Cart() {
   };
 
   const itemPrice = selectedData?.pricing?.currentPrice
-    ? parseFloat(selectedData.pricing.currentPrice.replace("₹", "").replace(",", ""))
+    ? parseFloat(
+        selectedData.pricing.currentPrice.replace("₹", "").replace(",", "")
+      )
     : 0;
 
   const quantity = itemPrice * inputValue;
@@ -38,7 +54,7 @@ export default function Cart() {
   const handleAddProduct = async (e) => {
     e.preventDefault();
     await addProduct(selectedData?.title, totalCost, inputValue);
-   
+    navigate("/delivery-details");
   };
 
   return (
@@ -46,7 +62,10 @@ export default function Cart() {
       <div className="bg-[#ffffff2c] w-full flex flex-col justify-center items-center mb-5">
         <div className="w-full max-w-[900px] flex justify-between py-3 pt-[5rem]">
           {CartSteps.map((cart, index) => (
-            <div key={index} className={`flex items-start ${cart.color} gap-1 py-3`}>
+            <div
+              key={index}
+              className={`flex items-start ${cart.color} gap-1 py-3`}
+            >
               <p className="text-5xl font-bold">{cart.number}</p>
               <div className="text-lg">
                 <h1>{cart.heading}</h1>
@@ -105,18 +124,18 @@ export default function Cart() {
             <p>Total Cost</p>
             <p>₹{totalCost.toFixed(2)}</p>
           </div>
-          <Link
+          {/* <Link
             to="/delivery-details"
             onClick={() => updateCalculate({ quantity, gstAmount, totalCost, inputValue })}
             className="w-[90%] text-black bg-white p-3 rounded-full font-semibold text-lg text-center"
           >
             Continue
-          </Link>
+          </Link> */}
           <button
             className="w-[90%] text-black bg-white p-3 rounded-full font-semibold text-lg text-center"
             onClick={handleAddProduct}
           >
-            Add To Cart
+            Continue
           </button>
         </div>
       </div>
