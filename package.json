@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "concurrently \"nodemon backend/index.js\" \"npm run dev --prefix frontend\"",
     "start": "nodemon backend/index.js",
-    "build": "npm run build --prefix frontend",
-    "test": "npm install && npm install --prefix frontend"
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
@@ -33,7 +32,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.9",
-    "rollup": "^4.32.1",
-    "vite": "^6.1.0"
+    "rollup": "^4.32.1"
   }
 }
