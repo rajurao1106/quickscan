@@ -34,7 +34,7 @@ export default function Navbar() {
     <section className="w-full fixed bg-blue-950 text-white flex flex-col justify-center items-center z-50">
       <div className="max-w-[1200px] w-full h-[70px] justify-between items-center flex px-4 text-base">
         {/* Logo */}
-        <Link to={"/"} >
+        <Link to={"/"}>
           <p className="text-2xl font-bold">Quick Scan</p>
         </Link>
 
@@ -189,10 +189,7 @@ export default function Navbar() {
             </button>
             <AddCart />
           </div>
-          <p
-            className=" cursor-pointer text-5xl group "
-            // Open Sign-In Modal
-          >
+          <p className=" cursor-pointer text-5xl group ">
             <FaUserCircle />
             <div className="text-lg absolute bg-gray-400 rounded-md hidden group-hover:block">
               <div className="flex flex-col">
@@ -240,11 +237,63 @@ export default function Navbar() {
               Deals
             </Link>
           </li>
-          <li>
-            <Link to="/Products" onClick={() => setIsMobileMenuOpen(false)}>
+
+          {/* Products Dropdown (Mobile) */}
+          <li className="w-full text-center">
+            <button
+              onClick={() => setIsProductsDropdownOpen(!isProductsDropdownOpen)}
+              className="flex items-center justify-center w-full"
+            >
               Products
-            </Link>
+              <RiArrowDropDownLine
+                className={`ml-1 text-2xl transition-transform ${
+                  isProductsDropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+
+            {isProductsDropdownOpen && (
+              <ul className="flex flex-col gap-2 mt-2 bg-blue-900 w-full py-2">
+                <li>
+                  <Link
+                    to="/products/metal-smart-business-card"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 hover:bg-blue-800"
+                  >
+                    Metal Card
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 hover:bg-blue-800"
+                  >
+                    Wooden Card
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 hover:bg-blue-800"
+                  >
+                    PVC Card
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 hover:bg-blue-800"
+                  >
+                    Other NFC Product
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
+
           <li>
             <Link to="/Pricing" onClick={() => setIsMobileMenuOpen(false)}>
               Pricing
