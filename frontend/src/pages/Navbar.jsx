@@ -34,8 +34,8 @@ export default function Navbar() {
     <section className="w-full fixed bg-blue-950 text-white flex flex-col justify-center items-center z-50">
       <div className="max-w-[1200px] w-full h-[70px] justify-between items-center flex px-4 text-base">
         {/* Logo */}
-        <Link to={"/"}>
-          <img loading="lazy" src={logo} alt="Logo" className="w-28" />
+        <Link to={"/"} >
+          <p className="text-2xl font-bold">Quick Scan</p>
         </Link>
 
         {/* Desktop Menu */}
