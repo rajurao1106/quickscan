@@ -9,7 +9,7 @@ export default function Hero() {
         <img loading="lazy" src={card_taping} alt="" className="w-[550px]" />
         <div className=" flex flex-col justify-center">
           <h1 className="text-6xl font-bold mb-10 max-md:text-center">
-            Boost Your Google Reviews With Tapify
+            Boost Your Google Reviews With Quickscan
           </h1>
           <p className="mb-10 text-xl max-md:text-center">
             Tap into success with our NFC enabled Google Review Card. Simply tap

@@ -33,7 +33,7 @@ export default function Payment() {
       key: keyId,
       amount: orderData.amount,
       currency: "INR",
-      name: "Tapify",
+      name: "Quickscan",
       description: "Order Payment",
       image: "https://example.com/your_logo",
       order_id: orderData.id,

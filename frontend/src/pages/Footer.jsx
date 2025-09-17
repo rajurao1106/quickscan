@@ -9,7 +9,7 @@ export default function Footer() {
           <div className=" max-lg:items-center max-md:flex max-lg:flex-col">
             <img loading="lazy" src={logo} alt="" className="w-28" />
             <p>
-              We at Tapify, redefining connections with NFC review & digital
+              We at Quickscan, redefining connections with NFC review & digital
               visiting cards. Elevate networking effortlessly. 🌟{" "}
             </p>
           </div>
@@ -22,7 +22,7 @@ export default function Footer() {
               <li>Timings: 10 AM – 7 PM (Mon – Sat)</li>
               <li>Whatsapp: +91-9148087687</li>
               <li>Call: +91-9148087687</li>
-              <li>Email: Info@tapify.in</li>
+              <li>Email: Info@Quickscan.in</li>
             </ul>
           </div>
           <div className="flex flex-col gap-5">
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
         <div className="w-[90%] h-[1px] bg-white"></div>
         <div className="flex justify-between py-3 items-center text-center text-[14px] flex-col">
-          <p>© 2024 Tapify. All rights reserved</p>
+          <p>© 2024 Quickscan. All rights reserved</p>
           <p>
             Privacy Policy | Refund Policy | Terms & Conditions | Shipping &
             Delivery

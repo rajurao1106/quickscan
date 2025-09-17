@@ -8,11 +8,11 @@ export default function AboutUs() {
         <div className="flex justify-center items-center gap-10 px-10 max-lg:flex-col-reverse">
           <div className="py-10">
             <h1 className="text-4xl font-bold mb-10">
-              Introducing Tapify – Your Gateway to Enhanced Networking and
+              Introducing Quickscan – Your Gateway to Enhanced Networking and
               Engagement!
             </h1>
             <p className="text-lg">
-              At Tapify, we’re passionate about revolutionizing the way
+              At Quickscan, we’re passionate about revolutionizing the way
               businesses connect and engage with their customers. <br />
               <br /> Specializing in the manufacturing and distribution of NFC
               Google Review cards, NFC smart business cards, and an array of
