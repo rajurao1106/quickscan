@@ -21,7 +21,7 @@ export default function Payment() {
   const handlePayment = async () => {
     const keyId = "rzp_test_rnzCxSf5oYy7vE";
 
-    const response = await fetch("http://localhost:5000/create-order", {
+    const response = await fetch("https://quickscan.onrender.com/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: totalCost.toFixed(2) || 1 }),
