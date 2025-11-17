@@ -9,7 +9,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
   try {
     const mailOptions = {
       from: `"${sender.name}" <${sender.email}>`,
-      to: email,
+      to: email,  
       subject: "Verify your email",
       html: VERIFICATION_EMAIL_TEMPLATE.replace("{verificationCode}", verificationToken),
     };
