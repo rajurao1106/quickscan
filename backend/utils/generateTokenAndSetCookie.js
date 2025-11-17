@@ -1,22 +1,14 @@
 import jwt from "jsonwebtoken";
 
 export const generateTokenAndSetCookie = (res, userId) => {
-  if (!process.env.JWT_SECRET) {
-    throw new Error("JWT_SECRET environment variable is missing");
-  }
-
-  // Generate the JWT token with userId and expiration time
   const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
-    expiresIn: "7d", // Token expires in 7 days
+    expiresIn: "7d",
   });
 
-  // Set the token as a cookie in the response
   res.cookie("token", token, {
-    httpOnly: true, // Prevents client-side JS from accessing the cookie
-    secure: process.env.NODE_ENV === "production", // Use HTTPS in production
-    sameSite: "strict", // Strict SameSite policy to prevent CSRF
-    maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expires in 7 days (same as token expiration)
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production", // required on Vercel
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // REQUIRED for cross-domain
+    maxAge: 7 * 24 * 60 * 60 * 1000,
   });
-
-  return token;
 };
