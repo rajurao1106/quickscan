@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL =
   import.meta.env.MODE === "development"
-    ? "https://quickscan.onrender.com"
+    ? "https://quickscan.onrender.com/api/auth"
     : "/api/auth";
 
 axios.defaults.withCredentials = true;
