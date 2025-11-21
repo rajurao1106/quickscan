@@ -51,10 +51,10 @@ export default function Footer() {
         </div>
         <div className="w-[90%] h-[1px] bg-white"></div>
         <div className="flex justify-between py-3 items-center text-center text-[14px] flex-col">
-          <p>
+          {/* <p>
             © 2024 Quickscan. All rights reserved | Designed and Developed by{" "}
             <a href="https://pracharkarsolutions.com">pracharkarsolutions</a>
-          </p>
+          </p> */}
           <p>
             Privacy Policy | Refund Policy | Terms & Conditions | Shipping &
             Delivery
