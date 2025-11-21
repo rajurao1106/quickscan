@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 app.use(cors({
-  origin: ["https://quickscan-nine.vercel.app", "http://172.30.240.1:5173"],
+  origin: ["https://quickscan-nine.vercel.app", "http://localhost:5000"],
   credentials: true,
 }));
 
